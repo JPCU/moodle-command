@@ -5,7 +5,7 @@ tar -cpf moodlebackup.tar.gz moodledata/ htdocs/
 
 DB_SERVER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once("$1/htdocs/config.php"); echo $CFG->dbhost;')
 DB_NAME=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once("$1/htdocs/config.php"); echo $CFG->dbname;')
-DB_USER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once("$1//htdocs/config.php"); echo $CFG->dbuser;')
+DB_USER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once("$1/htdocs/config.php"); echo $CFG->dbuser;')
 DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once("$1/htdocs/config.php"); echo $CFG->dbpass;')
 TIMESTAMP=$(date +%s)
 
