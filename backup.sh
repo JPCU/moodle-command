@@ -15,10 +15,10 @@ chmod 600 ~/.pgpass
 pg_dump -C -h $DB_SERVER -U $DB_USER $DB_NAME -f moodlebackup-$TIMESTAMP.sql
 
 rm ~/.pgpass
-unset $DB_SERVER
-unset $DB_NAME
-unset $DB_USER
-unset $DB_PASS
+unset DB_SERVER
+unset DB_NAME
+unset DB_USER
+unset DB_PASS
 
 ln -s moodlebackup-$TIMESTAMP.sql moodlebackup-latest.sql
 
@@ -28,4 +28,4 @@ tar --append --file=moodlebackup.tar.gz moodlebackup-latest.sql
 rm moodlebackup-$TIMESTAMP.sql
 rm moodlebackup-latest.sql
 
-unset $TIMESTAMP
+unset TIMESTAMP
