@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd $1
-
 echo 'Adding code and data directorys to archive...\n'
 
 tar -cpf moodlebackup.tar.gz moodledata/ htdocs/
