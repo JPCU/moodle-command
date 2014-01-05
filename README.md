@@ -9,4 +9,4 @@ Moodle Command Line Tools
 
 ### Usage: ###
 ```
-    curl https://raw.github.com/JPCU/moodle-command/master/backup.sh | sh -s /opt/local/share
+    curl -s https://raw.github.com/JPCU/moodle-command/master/backup.sh | sh -s /opt/local/share
