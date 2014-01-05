@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo 'Adding code and data directorys to archive...\n'
+echo 'Adding code and data directorys to archive...'
 
 tar -cpPf moodlebackup.tar.gz ${1}/moodledata/ ${1}/htdocs/
 
@@ -13,11 +13,11 @@ TIMESTAMP=$(date +%s)
 echo "$DB_SERVER:5432:$DB_NAME:$DB_USER:$DB_PASS" > ~/.pgpass
 chmod 600 ~/.pgpass
 
-echo 'Downloading database...\n'
+echo 'Downloading database...'
 
 pg_dump -C -h $DB_SERVER -U $DB_USER $DB_NAME -f moodlebackup-$TIMESTAMP.sql
 
-echo 'Adding database to archive...\n'
+echo 'Adding database to archive...'
 
 rm ~/.pgpass
 unset DB_SERVER
@@ -27,8 +27,8 @@ unset DB_PASS
 
 ln -s moodlebackup-$TIMESTAMP.sql moodlebackup-latest.sql
 
-tar --append --file=moodlebackup.tar.gz moodlebackup-$TIMESTAMP.sql
-tar --append --file=moodlebackup.tar.gz moodlebackup-latest.sql
+tar -P --append --file=moodlebackup.tar.gz moodlebackup-$TIMESTAMP.sql
+tar -P --append --file=moodlebackup.tar.gz moodlebackup-latest.sql
 
 rm moodlebackup-$TIMESTAMP.sql
 rm moodlebackup-latest.sql
