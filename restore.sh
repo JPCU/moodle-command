@@ -9,9 +9,9 @@ DB_USER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($arg
 DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbpass;' ${2}/config.php)
 
 
-printf "CREATE USER %s WITH PASSWORD '%s';" $DB_USER $DB_PASS
+printf "\n\nCREATE USER %s WITH PASSWORD '%s';\n" "$DB_USER" "$DB_PASS"
 ##echo CREATE USER $DB_USER WITH PASSWORD \'$DB_PASS\';
-printf "echo create database %s owner %s;" $DB_NAME $DB_USER
+printf "echo create database %s owner %s;\n\n" "$DB_NAME" "$DB_USER"
 ##echo create database $DB_NAME owner $DB_USER;
 
 tar -xvf $1 moodlebackup-latest.sql
