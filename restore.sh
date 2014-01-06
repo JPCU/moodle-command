@@ -1,9 +1,9 @@
 #!/bin/bash
 
 printf "Restoring Moodle code directory... \n"
-tar -xf $1 -C / $2
+tar -xPf $1 -C / $2
 printf "Restoring Moodle data directory... \n"
-tar -xf $1 -C / $3
+tar -xPf $1 -C / $3
 
 printf "Loading Moodle config... \n"
 mv ${2}/config.php ${2}/config.php.orig
