@@ -53,7 +53,7 @@ printf "\n\nRun the following on database server:\n"
 printf "CREATE USER %s WITH PASSWORD '%s';\n" "$DB_USER" "$DB_PASS"
 printf "CREATE DATABASE %s OWNER %s;\n\n" "$DB_NAME" "$DB_USER"
 
-printf "After user and DB are created rerun this script with dbonly"
+printf "After user and DB are created rerun this script with dbonly \n"
 fi
 
 
