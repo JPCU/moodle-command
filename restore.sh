@@ -9,15 +9,9 @@ DB_USER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($arg
 DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbpass;' ${2}/config.php)
 
 
-echo "Display database user creation statements? "
-read -p "Display database user creation statements? (y/n) " REPLY 
-echo    # new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-	echo CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';
-	create database $DB_NAME owner $DB_USER;
-fi
 
+echo CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';
+echo create database $DB_NAME owner $DB_USER;
 
 tar -xvf $1 moodlebackup-latest.sql
 tar -xvf $1 $(readlink moodlebackup-latest.sql)
