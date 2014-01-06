@@ -10,7 +10,7 @@ DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($arg
 
 
 echo "Display database user creation statements? "
-REPLY=$(read REPLY -n 1 -r)
+read REPLY -n 1 -r REPLY
 echo    # new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
