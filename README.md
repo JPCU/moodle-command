@@ -12,7 +12,7 @@ Moodle Command Line Tools
     curl -s https://raw.github.com/JPCU/moodle-command/master/backup.sh | sh -s /opt/local/share
 ```  
 
-##resore##
+##restore##
 
 ### Usage: ###
 ```
