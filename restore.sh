@@ -9,8 +9,8 @@ DB_USER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($arg
 DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbpass;' ${2}/config.php)
 
 
-
-REPLY=$(read "Display database user creation statements? " -n 1 -r)
+echo "Display database user creation statements? "
+REPLY=$(read REPLY -n 1 -r)
 echo    # new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
