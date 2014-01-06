@@ -25,7 +25,7 @@ chmod 600 ~/.pgpass
 
 printf "Restoring database...\n"
 
-psql h $DB_SERVER -U $DB_USER- d $DB_NAME -f moodlebackup-latest.sql
+psql -h $DB_SERVER -U $DB_USER -d $DB_NAME -f moodlebackup-latest.sql
 
 
 else
