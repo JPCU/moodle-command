@@ -1,7 +1,7 @@
 #!/bin/bash
 
-tar -xf $1 $2
-tar -xf $1 $3
+tar -xf $1 -C / $2
+tar -xf $1 -C / $3
 
 DB_SERVER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbhost;' ${2}/config.php)
 DB_NAME=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbname;' ${2}/config.php)
