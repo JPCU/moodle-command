@@ -17,9 +17,10 @@ DB_PASS=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($arg
 
 cp ${2}/config.php.orig ${2}/config.php
 
-printf "\n\nCREATE USER %s WITH PASSWORD '%s';\n" "$DB_USER" "$DB_PASS"
+printf "\n\nRun the following on database server:\n"
+printf "CREATE USER %s WITH PASSWORD '%s';\n" "$DB_USER" "$DB_PASS"
 ##echo CREATE USER $DB_USER WITH PASSWORD \'$DB_PASS\';
-printf "create database %s owner %s;\n\n" "$DB_NAME" "$DB_USER"
+printf "CREATE DATABASE %s OWNER %s;\n\n" "$DB_NAME" "$DB_USER"
 ##echo create database $DB_NAME owner $DB_USER;
 
 printf "Unpackaging Moodle database...\n"
