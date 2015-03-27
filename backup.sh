@@ -4,7 +4,7 @@ echo 'Adding code and data directories to archive...'
 
 tar -cpPf moodlebackup.tar.gz ${1}/moodledata/ ${1}/htdocs/
 
-if ! [ $2 = "skipdb" ]; then
+if [ "$2" != "skipdb" ]; then
 
 DB_SERVER=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbhost;' ${1}/htdocs/config.php)
 DB_NAME=$(php -r 'error_reporting(0); define("CLI_SCRIPT", 1); include_once($argv[1]); echo $CFG->dbname;' ${1}/htdocs/config.php)
